@@ -26,7 +26,7 @@ try {
 }
 
 echo "2. Running migrations...\n";
-Artisan::call('migrate:fresh', ['--path' => 'Migration.php', '--force' => true]);
+Artisan::call('migrate', ['--path' => 'Migration.php', '--force' => true]);
 echo Artisan::output();
 
 echo "3. Creating accounts...\n";
