@@ -13,11 +13,16 @@ use Illuminate\Support\Facades\Hash;
 
 echo "1. Creating database...\n";
 try {
-    $pdo = new PDO('mysql:host=127.0.0.1;port=3306', 'root', '');
-    $pdo->exec('CREATE DATABASE IF NOT EXISTS prj_stage;');
-    echo "Database prj_stage ensured.\n";
+    $db_host = env('DB_HOST');
+    $db_name = env('DB_DATABASE');
+    $db_user = env('DB_USERNAME');
+    $db_pass = env('DB_PASSWORD');
+    $db_port = env('DB_PORT');
+
+    $pdo = new PDO("mysql:host=$db_host;port=$db_port;dbname=$db_name", $db_user, $db_pass);
+    echo "Connected to Railway Database successfully.\n";
 } catch (PDOException $e) {
-    die("MySQL connection failed: " . $e->getMessage() . "\n");
+    die("Connection failed: " . $e->getMessage());
 }
 
 echo "2. Running migrations...\n";
