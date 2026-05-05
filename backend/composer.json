@@ -29,23 +29,18 @@
             "Database\\Seeders\\": "database/seeders/"
         }
     },
-    "autoload-dev": {
+  "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
         }
-    },
-    "classmap": [
+  },
+  "classmap": [
       "Models.php",
       "Controllers.php",
       "Routes.php",
       "Migration.php",
       "Kernel.php"
     ]
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Tests\\": "tests/"
-    }
   },
   "scripts": {
     "post-autoload-dump": [
